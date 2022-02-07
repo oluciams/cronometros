@@ -3,7 +3,7 @@ import './App.css';
 import { Chronometer } from './components/Chronometer';
 
 export const App = () => {
-  
+
   return (
     <div className="App">
       <header className="App-header">
@@ -11,6 +11,9 @@ export const App = () => {
       </header>
       <section>
       <Chronometer/>
+      </section>
+      <section className="mt-4">
+      <button type="button" className="btn btn-outline-secondary btn-lg"> + </button>
       </section>
     </div>
   );
