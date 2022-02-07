@@ -1,16 +1,19 @@
+import React from 'react';
 import './App.css';
+import { Chronometer } from './components/Chronometer';
 
-function App() {
+export const App = () => {
+  
   return (
     <div className="App">
       <header className="App-header">
         <h2>Cronometros</h2>       
       </header>
-      <div>
-        
-      </div>
+      <section>
+      <Chronometer/>
+      </section>
     </div>
   );
 }
 
-export default App;
+
