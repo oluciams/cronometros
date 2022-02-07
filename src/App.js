@@ -13,7 +13,7 @@ export const App = () => {
       <Chronometer/>
       </section>
       <section className="mt-4">
-      <button type="button" className="btn btn-outline-secondary btn-lg"> + </button>
+      <button type="button" className="btn btn-outline-secondary btn-lg fw-bold"> + </button>
       </section>
     </div>
   );
