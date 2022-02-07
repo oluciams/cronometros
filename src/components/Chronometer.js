@@ -1,7 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { formatTime } from '../utils/formatTime';
 
 
 export const Chronometer = ()=> {
+
+  const [timer, setTimer] = useState(0);
+  const [timerStart, setTimerStart] = useState(false);
+  
+
+ useEffect(() => {
+   let interval = null;
+
+   if (timerStart){
+     interval = setInterval (()=>{
+      setTimer(prevTimer => prevTimer + 1)
+     }, 1000)
+   }else {
+    clearInterval(interval)
+   }
+
+   return () => clearInterval(interval)
+   
+ }, [timerStart]);
 
   return (  
 
@@ -13,7 +33,7 @@ export const Chronometer = ()=> {
           <h5 className="card-title">Mejorar el CSS</h5>
           <p className="card-text text-secondary"><small>Portafolio</small></p>
           <div className="text-center fs-4">
-          <p className="text-secondary">00:00:00</p>
+          <p className="text-secondary">{formatTime(timer)}</p>
           </div>
           <div className="text-end">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-pencil-square me-2" viewBox="0 0 16 16">
@@ -25,8 +45,12 @@ export const Chronometer = ()=> {
             </svg>
           </div>
         </div>
-        <button type="button" class="btn btn-outline-success">Start</button>
-        <button type="button" class="btn btn-outline-danger">Stop</button>
+        {!timerStart && (
+        <button onClick={() => setTimerStart(true)} type="button" class="btn btn-outline-success">Start</button>
+        )}
+        {timerStart && (
+        <button onClick={() => setTimerStart(false)} type="button" class="btn btn-outline-danger">Stop</button>
+        )}
         </div>        
       </div>      
     </div>
