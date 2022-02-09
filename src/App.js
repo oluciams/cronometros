@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import { Chronometer } from './components/Chronometer';
+import data from './data';
+import { Chronometers } from './components/Chonometers';
 import { Form } from './components/Form';
 
 export const App = () => {
+
+  const [chronometers, setChronometers] = useState([...data]);
 
   return (
     <div className="App">
@@ -11,7 +14,7 @@ export const App = () => {
         <h2>Cronometros</h2>       
       </header>
       <section>
-      <Chronometer/>
+      <Chronometers chronometers={chronometers}/>
       </section>
       <section className="mt-4">
       <Form/>   

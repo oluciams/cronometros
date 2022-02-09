@@ -36,7 +36,7 @@ export const Form = ()=> {
 
   setTitle('')
   setProyect('')
-  setShowForm(true)
+  // setShowForm(true)
   }
 
   return(

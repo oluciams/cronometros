@@ -2,11 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { formatTime } from '../utils/formatTime';
 
 
-export const Chronometer = ()=> {
+export const Chronometer = ({
+
+  id,
+  title,
+  proyect
+  })=> {
 
   const [timer, setTimer] = useState(0);
   const [timerStart, setTimerStart] = useState(false);
-  
   
 
  useEffect(() => {
@@ -26,13 +30,13 @@ export const Chronometer = ()=> {
 
   return (  
 
-  <div className="container">
+  <div className="container" key={id}>
     <div className="row justify-content-md-center">
       <div className="col-3">
         <div className="card text-start rounded" >       
         <div className="card-body">
-          <h5 className="card-title">Mejorar el CSS</h5>
-          <p className="card-text text-secondary"><small>Portafolio</small></p>
+          <h5 className="card-title">{title}</h5>
+          <p className="card-text text-secondary"><small>{proyect}</small></p>
           <div className="text-center fs-4">
           <p className="text-secondary">{formatTime(timer)}</p>
           </div>
