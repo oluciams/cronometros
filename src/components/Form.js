@@ -1,19 +1,24 @@
 import React, { useState } from 'react';
+import idGenerator from '../utils/idGenerator';
+
 
 export const Form = ()=> {
 
- const [showForm, setShowForm] = useState(false);
+ const [showForm, setShowForm] = useState(true);
  const [title, setTitle] = useState('');
  const [proyect, setProyect] = useState('');
 
- const proyects = {}
-
- const createProyect= ()=>{  
-  
- proyects.title= title
- proyects.proyect=proyect
  
-}
+ const createProyect= ()=>{ 
+
+  let proyectData= {} 
+  proyectData.id= idGenerator()
+  proyectData.title= title
+  proyectData.proyect=proyect
+  console.log(proyectData)
+
+  // return proyectData 
+} 
 
   const handleTitle= (e)=>{
     const valueTitle = e.target.value
@@ -32,11 +37,11 @@ export const Form = ()=> {
   if (title && proyect){
     createProyect({title, proyect})
   }
-  console.log(proyects)
+ 
 
   setTitle('')
   setProyect('')
-  // setShowForm(true)
+  
   }
 
   return(
@@ -49,11 +54,11 @@ export const Form = ()=> {
             <div className="card-body">
               <form onSubmit={handleOnSubmit}>
                 <div className="mb-2"> 
-                  <label for="input1" className="form-label">Title</label>
+                  <label htmlFor="input1" className="form-label">Title</label>
                   <input type="text" className="form-control" id="input1" value={title} name="title" onChange={handleTitle}/>                                  
                 </div> 
                 <div className="mb-2">             
-                  <label for="input2" className="form-label">Proyect</label>
+                  <label htmlFor="input2" className="form-label">Proyect</label>
                   <input type="text" className="form-control" id="input2" value={proyect} name="proyect" onChange={handleProyect}/>                                  
                 </div> 
                 <div className="btn-group mb-1 mt-3 d-flex">

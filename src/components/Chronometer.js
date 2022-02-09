@@ -11,8 +11,11 @@ export const Chronometer = ({
 
   const [timer, setTimer] = useState(0);
   const [timerStart, setTimerStart] = useState(false);
+
   
 
+  
+  
  useEffect(() => {
    let interval = null;
 
@@ -26,19 +29,19 @@ export const Chronometer = ({
 
    return () => clearInterval(interval)
    
- }, [timerStart]);
+ }, [timerStart]); 
 
   return (  
 
   <div className="container" key={id}>
-    <div className="row justify-content-md-center">
+    <div className="row justify-content-md-center mb-3">
       <div className="col-3">
         <div className="card text-start rounded" >       
         <div className="card-body">
           <h5 className="card-title">{title}</h5>
           <p className="card-text text-secondary"><small>{proyect}</small></p>
           <div className="text-center fs-4">
-          <p className="text-secondary">{formatTime(timer)}</p>
+          <h3 className="text-secondary">{formatTime(timer)}</h3>
           </div>
           <div className="text-end">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-pencil-square me-2" viewBox="0 0 16 16">

@@ -16,7 +16,7 @@ export const Chronometers = ({chronometers}) =>{
       proyect={proyect}  
       />
       )
-    }
+    }    
     </>
   )
 } 
