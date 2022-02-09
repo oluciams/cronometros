@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export const Form = ()=> {
 
-  return(
+ const [showForm, setShowForm] = useState(false);
 
+  return(
+   <>
+   {!showForm && (   
     <div className="container">
       <div className="row justify-content-md-center">
         <div className="col-3">
@@ -19,12 +22,17 @@ export const Form = ()=> {
               </div> 
               <div className="btn-group mb-1 mt-3 d-flex">
                 <button type="button" className="btn btn-outline-primary">Create</button>
-                <button type="button" className="btn btn-outline-danger">Cancel</button>              
+                <button onClick={() => setShowForm(true)} type="button" className="btn btn-outline-danger">Cancel</button>              
               </div>
             </div>
           </div>        
         </div>      
       </div>
-    </div>      
+    </div>
+    )}
+    {showForm && (
+    <button onClick={() => setShowForm(false)} type="button" className="btn btn-outline-secondary btn-lg fw-bold mt-3"> + </button>
+    )}
+   </>     
   )
 }
