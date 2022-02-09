@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Chronometer } from './components/Chronometer';
+import { Form } from './components/Form';
 
 export const App = () => {
 
@@ -13,7 +14,8 @@ export const App = () => {
       <Chronometer/>
       </section>
       <section className="mt-4">
-      <button type="button" className="btn btn-outline-secondary btn-lg fw-bold"> + </button>
+      <Form/>
+      <button type="button" className="btn btn-outline-secondary btn-lg fw-bold mt-3"> + </button>
       </section>
     </div>
   );
