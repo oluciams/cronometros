@@ -6,7 +6,7 @@ export const Chronometer = ({
 
   id,
   title,
-  proyect
+  project
   })=> {
 
   const [timer, setTimer] = useState(0);
@@ -39,7 +39,7 @@ export const Chronometer = ({
         <div className="card text-start rounded" >       
         <div className="card-body">
           <h5 className="card-title">{title}</h5>
-          <p className="card-text text-secondary"><small>{proyect}</small></p>
+          <p className="card-text text-secondary"><small>{project}</small></p>
           <div className="text-center fs-4">
           <h3 className="text-secondary">{formatTime(timer)}</h3>
           </div>

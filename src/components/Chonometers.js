@@ -9,11 +9,11 @@ export const Chronometers = ({chronometers}) =>{
   return (
     <>
     {
-      chronometers.map(({id, title, proyect})=>
+      chronometers.map(({id, title, project})=>
       <Chronometer
       key={id}
       title={title}
-      proyect={proyect}  
+      project={project}  
       />
       )
     }    

@@ -3,12 +3,12 @@ const data = [
   {
     id:1,
     title: 'Mejorar CSS',
-    proyect: 'E-commerce'
+    project: 'E-commerce'
   },
   {
     id:2,
     title: 'Practice squat',
-    proyect: 'Gym Chores'
+    project: 'Gym Chores'
   } 
   
 ]

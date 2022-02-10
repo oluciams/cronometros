@@ -6,18 +6,17 @@ export const Form = ()=> {
 
  const [showForm, setShowForm] = useState(true);
  const [title, setTitle] = useState('');
- const [proyect, setProyect] = useState('');
+ const [project, setProject] = useState('');
 
  
- const createProyect= ()=>{ 
+ const createProject= ()=>{ 
 
-  let proyectData= {} 
-  proyectData.id= idGenerator()
-  proyectData.title= title
-  proyectData.proyect=proyect
-  console.log(proyectData)
-
-  // return proyectData 
+  let projectData= {} 
+  projectData.id= idGenerator()
+  projectData.title= title
+  projectData.project=project
+  console.log(projectData)
+  
 } 
 
   const handleTitle= (e)=>{
@@ -28,19 +27,19 @@ export const Form = ()=> {
 
   const handleProyect= (e)=>{
     const valueProyect = e.target.value
-    setProyect(valueProyect)
-    console.log(proyect)
+    setProject(valueProyect)
+    console.log(project)
   }  
 
   const handleOnSubmit = (e) => {
   e.preventDefault()
-  if (title && proyect){
-    createProyect({title, proyect})
+  if (title && project){
+    createProject({title, project})
   }
  
 
   setTitle('')
-  setProyect('')
+  setProject('')
   
   }
 
@@ -59,7 +58,7 @@ export const Form = ()=> {
                 </div> 
                 <div className="mb-2">             
                   <label htmlFor="input2" className="form-label">Proyect</label>
-                  <input type="text" className="form-control" id="input2" value={proyect} name="proyect" onChange={handleProyect}/>                                  
+                  <input type="text" className="form-control" id="input2" value={project} name="project" onChange={handleProyect}/>                                  
                 </div> 
                 <div className="btn-group mb-1 mt-3 d-flex">
                   <button type="submit" className="btn btn-outline-primary">Create</button>
