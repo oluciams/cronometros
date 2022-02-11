@@ -1,6 +1,6 @@
 
 const idGenerator = () => {
-  let id = Math.floor(Math.random() * (1000));  
+  let id = Math.floor(Math.random() * (100)+2);  
   return id
 }
 

@@ -11,9 +11,6 @@ export const Chronometer = ({
 
   const [timer, setTimer] = useState(0);
   const [timerStart, setTimerStart] = useState(false);
-
-  
-
   
   
  useEffect(() => {

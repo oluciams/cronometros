@@ -1,9 +1,9 @@
 import React from 'react';
 import { Chronometer } from './Chronometer';
 
+
 export const Chronometers = ({chronometers}) =>{ 
-  
-  
+
   if(!chronometers) return <h3>Loading . . . </h3>
 
   return (
@@ -18,5 +18,5 @@ export const Chronometers = ({chronometers}) =>{
       )
     }    
     </>
-  )
+  )  
 } 

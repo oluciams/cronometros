@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import data from '../data';
 import idGenerator from '../utils/idGenerator';
 
 
@@ -6,42 +7,36 @@ export const Form = ()=> {
 
  const [showForm, setShowForm] = useState(true);
  const [title, setTitle] = useState('');
- const [project, setProject] = useState('');
+ const [project, setProject] = useState(''); 
+ const [newChrono, setNewChrono] = useState(data); 
 
  
- const createProject= ()=>{ 
-
-  let projectData= {} 
-  projectData.id= idGenerator()
-  projectData.title= title
-  projectData.project=project
-  console.log(projectData)
-  
-} 
+  const createProject= (title, project)=>{ 
+    const chronometer = {id: idGenerator(), title, project} 
+    setNewChrono([chronometer, ...newChrono]);   
+    
+  }  
 
   const handleTitle= (e)=>{
     const valueTitle = e.target.value
-    setTitle(valueTitle) 
-    console.log(title)   
+    setTitle(valueTitle)       
   }
 
   const handleProyect= (e)=>{
     const valueProyect = e.target.value
-    setProject(valueProyect)
-    console.log(project)
+    setProject(valueProyect)    
   }  
 
   const handleOnSubmit = (e) => {
   e.preventDefault()
-  if (title && project){
-    createProject({title, project})
+    if (title && project){
+    createProject(title, project);
+    setTitle('')
+    setProject('')
   }
- 
-
-  setTitle('')
-  setProject('')
-  
+    setShowForm(true)  
   }
+  console.log(newChrono) 
 
   return(
    <>
