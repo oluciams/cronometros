@@ -1,21 +1,11 @@
 import React, { useState } from 'react';
-import data from '../data';
-import idGenerator from '../utils/idGenerator';
 
 
-export const Form = ()=> {
+export const Form = ({createProject})=> {
 
  const [showForm, setShowForm] = useState(true);
  const [title, setTitle] = useState('');
  const [project, setProject] = useState(''); 
- const [newChrono, setNewChrono] = useState(data); 
-
- 
-  const createProject= (title, project)=>{ 
-    const chronometer = {id: idGenerator(), title, project} 
-    setNewChrono([chronometer, ...newChrono]);   
-    
-  }  
 
   const handleTitle= (e)=>{
     const valueTitle = e.target.value
@@ -30,13 +20,14 @@ export const Form = ()=> {
   const handleOnSubmit = (e) => {
   e.preventDefault()
     if (title && project){
-    createProject(title, project);
+    createProject(title, project)
+  } 
+   
     setTitle('')
     setProject('')
-  }
-    setShowForm(true)  
-  }
-  console.log(newChrono) 
+    setShowForm(true) 
+
+}
 
   return(
    <>

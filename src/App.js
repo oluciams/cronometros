@@ -3,10 +3,18 @@ import './App.css';
 import data from './data';
 import { Chronometers } from './components/Chonometers';
 import { Form } from './components/Form';
+import idGenerator from './utils/idGenerator';
 
 export const App = () => {
 
   const [chronometers, setChronometers] = useState([...data]);
+
+  const createProject= (title, project)=>{ 
+    const chronometer = {id: idGenerator(), title, project} 
+    // setChronometers([chronometer, ...chronometers]);
+    setChronometers([...chronometers, chronometer]);      
+    
+  }  
 
   return (
     <div className="App">
@@ -17,7 +25,7 @@ export const App = () => {
       <Chronometers chronometers={chronometers}/>
       </section>
       <section className="mt-4">
-      <Form/>   
+      <Form createProject={createProject}/>   
       </section>
     </div>
   );
