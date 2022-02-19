@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 
-export const Form = ({createProject, setShowForm, setChronoToEdit})=> {
+export const Form = ({createProject, setShowForm, chronoToEdit, titleToEdit, projectToEdit, id})=> {
 
  const [title, setTitle] = useState('');
  const [project, setProject] = useState(''); 
@@ -25,6 +25,12 @@ export const Form = ({createProject, setShowForm, setChronoToEdit})=> {
     setTitle('')
     setProject('')
   }
+
+  useEffect(() => {
+    setTitle(titleToEdit)
+    setProject(projectToEdit)
+    
+  }, [chronoToEdit]);
   
   return(
     <>       
