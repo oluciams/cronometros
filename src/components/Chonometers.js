@@ -1,8 +1,9 @@
 import React from 'react';
 import { Chronometer } from './Chronometer';
+import { Form } from './Form';
 
 
-export const Chronometers = ({chronometers, deleteProject}) =>{ 
+export const Chronometers = ({chronometers, deleteProject, chronoToEdit, setChronoToEdit}) =>{ 
 
   if(!chronometers) return <h3>Loading . . . </h3>
 
@@ -10,13 +11,21 @@ export const Chronometers = ({chronometers, deleteProject}) =>{
     <>
       {
         chronometers.map(({id, title, project})=>
-          <Chronometer
+
+          {chronoToEdit ?            
+            <Form
             key={id}
-            id={id}
             title={title}
-            project={project}
-            deleteProject={deleteProject}  
-          />
+            project={project}/>
+            :
+            <Chronometer
+              key={id}
+              id={id}
+              title={title}
+              project={project}
+              deleteProject={deleteProject}              
+              setChronoToEdit={setChronoToEdit}/>  
+          }
         )
       }    
     </>

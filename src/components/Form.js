@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 
-export const Form = ({createProject, setShowForm})=> {
+export const Form = ({createProject, setShowForm, setChronoToEdit})=> {
 
  const [title, setTitle] = useState('');
  const [project, setProject] = useState(''); 
@@ -18,14 +18,14 @@ export const Form = ({createProject, setShowForm})=> {
 
   const handleOnSubmit = (e) => {
     e.preventDefault()
-    if (title && project){
+    if (title && project){      
       createProject(title, project)
-    } 
+    }
    
     setTitle('')
     setProject('')
-}
-
+  }
+  
   return(
     <>       
       <div className="container">

@@ -9,12 +9,14 @@ export const App = () => {
 
   const [chronometers, setChronometers] = useState([...data]);
   const [showForm, setShowForm] = useState(false);
+  const [chronoToEdit, setChronoToEdit] = useState(null);
 
   const createProject= (title, project)=>{ 
     const chronometer = {id: idGenerator(), title, project}  
-    setChronometers([...chronometers, chronometer]);    
-  } 
-
+    setChronometers([...chronometers, chronometer]);
+    setShowForm(false)    
+  }
+ 
   const deleteProject = (id)=>{
     const newChronometers = chronometers.filter((chronometer)=>chronometer.id !== id);
     setChronometers(newChronometers)
@@ -28,13 +30,17 @@ export const App = () => {
       <section>
         <Chronometers
           chronometers={chronometers}
-          deleteProject={deleteProject}/>        
+          deleteProject={deleteProject}
+          setChronoToEdit={setChronoToEdit}
+          chronoToEdit={chronoToEdit}/>        
       </section>
       <section className="mt-4">
         {showForm ?
           <Form
             createProject={createProject}
-            setShowForm={setShowForm}/> 
+            setShowForm={setShowForm}
+            chronoToEdit={chronoToEdit}
+            setChronoToEdit={setChronoToEdit}/> 
         :
           <button onClick={() => setShowForm(true)} type="button" className="btn btn-outline-secondary btn-lg fw-bold mt-3"> + </button>  
         }
