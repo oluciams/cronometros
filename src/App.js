@@ -12,14 +12,11 @@ export const App = () => {
   const createProject= (title, project)=>{ 
     const chronometer = {id: idGenerator(), title, project}  
     setChronometers([...chronometers, chronometer]);    
-  }  
+  } 
 
   const deleteProject = (id)=>{
     const newChronometers = chronometers.filter((chronometer)=>chronometer.id !== id);
     setChronometers(newChronometers)
-    console.log('hola')
-    console.log(id)
-
   }
 
   return (
@@ -28,10 +25,13 @@ export const App = () => {
         <h2>Cronometros</h2>       
       </header>
       <section>
-      <Chronometers chronometers={chronometers} deleteProject={deleteProject}/>
+        <Chronometers
+          chronometers={chronometers}
+          deleteProject={deleteProject}/>        
       </section>
       <section className="mt-4">
-      <Form createProject={createProject}/>   
+        <Form
+          createProject={createProject}/>   
       </section>
     </div>
   );

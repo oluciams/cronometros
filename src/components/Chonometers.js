@@ -8,17 +8,17 @@ export const Chronometers = ({chronometers, deleteProject}) =>{
 
   return (
     <>
-    {
-      chronometers.map(({id, title, project})=>
-      <Chronometer
-      key={id}
-      id={id}
-      title={title}
-      project={project}
-      deleteProject={deleteProject}  
-      />
-      )
-    }    
+      {
+        chronometers.map(({id, title, project})=>
+          <Chronometer
+            key={id}
+            id={id}
+            title={title}
+            project={project}
+            deleteProject={deleteProject}  
+          />
+        )
+      }    
     </>
   )  
 } 
