@@ -8,6 +8,7 @@ import idGenerator from './utils/idGenerator';
 export const App = () => {
 
   const [chronometers, setChronometers] = useState([...data]);
+  const [showForm, setShowForm] = useState(false);
 
   const createProject= (title, project)=>{ 
     const chronometer = {id: idGenerator(), title, project}  
@@ -30,9 +31,15 @@ export const App = () => {
           deleteProject={deleteProject}/>        
       </section>
       <section className="mt-4">
-        <Form
-          createProject={createProject}/>   
-      </section>
+        {showForm ?
+          <Form
+            createProject={createProject}
+            setShowForm={setShowForm}/> 
+        :
+          <button onClick={() => setShowForm(true)} type="button" className="btn btn-outline-secondary btn-lg fw-bold mt-3"> + </button>  
+        }
+        </section>
+
     </div>
   );
 }
