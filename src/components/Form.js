@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
 
-export const Form = ({createProject, setShowForm, chronoToEdit, titleToEdit, projectToEdit, id})=> {
+export const Form = ({createProject, setShowForm, chronoToEdit, el})=> {
 
  const [title, setTitle] = useState('');
  const [project, setProject] = useState(''); 
+
+ let {titleToEdit, projectToEdit} = el
 
   const handleTitle= (e)=>{
     const valueTitle = e.target.value

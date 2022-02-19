@@ -8,28 +8,25 @@ export const Chronometers = ({chronometers, deleteProject, chronoToEdit, setChro
   if(!chronometers) return <h3>Loading . . . </h3>
 
   return (
-    <>    
+    <>   
       {
-        chronometers.map(({id, title, project}) => (
+        chronometers.map((el) => (
           
-          chronoToEdit ?            
+          chronoToEdit === el ?            
             <Form
-            key={id}
-            titleToEdit={title}
-            projectToEdit={project}
+            key={el.id}
+            el={el}            
             />
           :                      
             <Chronometer
-              key={id}
-              id={id}
-              title={title}
-              project={project}
+              key={el.id}      
+              el={el}
               deleteProject={deleteProject}              
               setChronoToEdit={setChronoToEdit}
             />                      
         ))
       } 
-      {console.log(chronoToEdit)}   
+       
     </>
   )  
 } 
