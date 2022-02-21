@@ -33,7 +33,7 @@ export const App = () => {
           deleteProject={deleteProject}
           setChronoToEdit={setChronoToEdit}
           chronoToEdit={chronoToEdit}/>        
-      </section>
+      </section>      
       <section className="mt-4">
         {showForm ?
           <Form
@@ -44,8 +44,7 @@ export const App = () => {
         :
           <button onClick={() => setShowForm(true)} type="button" className="btn btn-outline-secondary btn-lg fw-bold mt-3"> + </button>  
         }
-        </section>
-
+        </section>       
     </div>
   );
 }

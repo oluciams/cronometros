@@ -6,8 +6,6 @@ export const Form = ({createProject, setShowForm, chronoToEdit, el})=> {
  const [title, setTitle] = useState('');
  const [project, setProject] = useState(''); 
 
- let {titleToEdit, projectToEdit} = el
-
   const handleTitle= (e)=>{
     const valueTitle = e.target.value
     setTitle(valueTitle)       
@@ -26,12 +24,14 @@ export const Form = ({createProject, setShowForm, chronoToEdit, el})=> {
    
     setTitle('')
     setProject('')
+   
   }
 
-  useEffect(() => {
-    setTitle(titleToEdit)
-    setProject(projectToEdit)
-    
+  useEffect(() => { 
+    if(chronoToEdit){
+      setTitle(el.title)
+      setProject(el.project)
+    }
   }, [chronoToEdit]);
   
   return(
