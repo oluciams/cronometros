@@ -51,7 +51,11 @@ export const Form = ({createProject, setShowForm, chronoToEdit, el})=> {
                     <input type="text" className="form-control" id="input2" value={project} name="project" onChange={handleProyect}/>                                  
                   </div> 
                   <div className="btn-group mb-1 mt-3 d-flex">
-                    <button type="submit" className="btn btn-outline-primary">Create</button>
+                    {chronoToEdit ?  
+                      <button type="submit" className="btn btn-outline-primary">Update</button>
+                    :
+                      <button type="submit" className="btn btn-outline-primary">Create</button>
+                    }
                     <button onClick={() => setShowForm(false)} type="button" className="btn btn-outline-danger">Cancel</button>              
                   </div>
                 </form>                            
