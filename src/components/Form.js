@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import data from '../data';
 
 
-export const Form = ({createProject, setShowForm, chronoToEdit, el})=> {
+export const Form = ({createProject, updateProject, showForm, setShowForm, chronoToEdit, el})=> {
 
  const [title, setTitle] = useState('');
  const [project, setProject] = useState(''); 
 
   const handleTitle= (e)=>{
     const valueTitle = e.target.value
-    setTitle(valueTitle)       
+    setTitle(valueTitle)
   }
 
   const handleProyect= (e)=>{
@@ -17,14 +18,21 @@ export const Form = ({createProject, setShowForm, chronoToEdit, el})=> {
   }  
 
   const handleOnSubmit = (e) => {
-    e.preventDefault()
-    if (title && project){      
-      createProject(title, project)
-    }
+    e.preventDefault()    
+    if(chronoToEdit){        
+      console.log('editando')
+      updateProject(el.id, title, project)
+    }else{
+      if(title, project){
+        createProject(title, project)                
+      }
+      console.log('creando')
+
+   }
    
     setTitle('')
-    setProject('')
-   
+    setProject('') 
+      
   }
 
   useEffect(() => { 
@@ -33,7 +41,7 @@ export const Form = ({createProject, setShowForm, chronoToEdit, el})=> {
       setProject(el.project)
     }
   }, [chronoToEdit]);
-  
+
   return(
     <>       
       <div className="container">
@@ -49,15 +57,15 @@ export const Form = ({createProject, setShowForm, chronoToEdit, el})=> {
                   <div className="mb-2">             
                     <label htmlFor="input2" className="form-label">Proyect</label>
                     <input type="text" className="form-control" id="input2" value={project} name="project" onChange={handleProyect}/>                                  
-                  </div> 
+                  </div>                 
                   <div className="btn-group mb-1 mt-3 d-flex">
                     {chronoToEdit ?  
-                      <button type="submit" className="btn btn-outline-primary">Update</button>
+                      <button type="submit" className="btn btn-outline-primary">Update</button>                     
                     :
                       <button type="submit" className="btn btn-outline-primary">Create</button>
                     }
                     <button onClick={() => setShowForm(false)} type="button" className="btn btn-outline-danger">Cancel</button>              
-                  </div>
+                  </div>                
                 </form>                            
               </div>
             </div>        

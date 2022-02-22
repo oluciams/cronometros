@@ -3,7 +3,7 @@ import { Chronometer } from './Chronometer';
 import { Form } from './Form';
 
 
-export const Chronometers = ({chronometers, deleteProject, chronoToEdit, setChronoToEdit}) =>{ 
+export const Chronometers = ({chronometers, createProject, deleteProject, updateProject, chronoToEdit, setChronoToEdit, showForm, setShowForm}) =>{ 
 
   if(!chronometers) return <h3>Loading . . . </h3>
 
@@ -16,7 +16,12 @@ export const Chronometers = ({chronometers, deleteProject, chronoToEdit, setChro
             <Form
             key={el.id}
             el={el}
-            chronoToEdit={chronoToEdit}    
+            chronoToEdit={chronoToEdit}
+            setShowForm={setShowForm} 
+            showForm={showForm}          
+            createProject={createProject}
+            updateProject={updateProject} 
+             
             // titleToEdit={el.title}
             // projectToEdit={el.project}           
             />
@@ -26,6 +31,9 @@ export const Chronometers = ({chronometers, deleteProject, chronoToEdit, setChro
               el={el}
               deleteProject={deleteProject}              
               setChronoToEdit={setChronoToEdit}
+              setShowForm={setShowForm}
+              createProject={createProject}
+              updateProject={updateProject} 
             />                      
         ))
       } 
