@@ -47,8 +47,7 @@ export const App = () => {
           chronometers={chronometers}
           deleteProject={deleteProject}
           setChronoToEdit={setChronoToEdit}
-          chronoToEdit={chronoToEdit}
-          showForm={showForm}
+          chronoToEdit={chronoToEdit}        
           setShowForm={setShowForm}
           createProject={createProject}
           updateProject={updateProject}/>        
@@ -58,8 +57,7 @@ export const App = () => {
           <Form
             createProject={createProject}
             updateProject={updateProject}
-            setShowForm={setShowForm}
-            showForm={showForm}
+            setShowForm={setShowForm}           
             chronoToEdit={chronoToEdit}
             setChronoToEdit={setChronoToEdit}
             /> 
