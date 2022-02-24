@@ -16,10 +16,11 @@ export const Chronometers = ({chronometers, createProject, deleteProject, update
             <Form
               key={el.id}
               el={el}
-              chronoToEdit={chronoToEdit}
+              chronoToEdit={chronoToEdit}             
               setShowForm={setShowForm}              
               createProject={createProject}
-              updateProject={updateProject}                     
+              updateProject={updateProject}
+              setChronoToEdit={setChronoToEdit}                                        
             />
           :                      
             <Chronometer
@@ -29,7 +30,8 @@ export const Chronometers = ({chronometers, createProject, deleteProject, update
               setChronoToEdit={setChronoToEdit}
               setShowForm={setShowForm}
               createProject={createProject}
-              updateProject={updateProject} 
+              updateProject={updateProject}
+              
             />                      
         ))
       } 

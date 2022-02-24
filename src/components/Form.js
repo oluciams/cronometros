@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
 
-export const Form = ({createProject, updateProject, setShowForm, chronoToEdit, el})=> {
+export const Form = ({createProject, updateProject, setShowForm, chronoToEdit,  setChronoToEdit, el})=> {
 
  const [title, setTitle] = useState('');
  const [project, setProject] = useState('');
+ 
+ 
 
   const handleTitle= (e)=>{
     const valueTitle = e.target.value
@@ -20,15 +22,34 @@ export const Form = ({createProject, updateProject, setShowForm, chronoToEdit, e
     e.preventDefault()    
     if(chronoToEdit){ 
       updateProject(el.id, title, project)      
+      handleFormCancel()  
+      
+      
     }else { 
       if(title, project){
-        createProject(title, project)                
+        createProject(title, project) 
+                        
       }
-    }
-   
+    }     
     setTitle('')
-    setProject('')       
-  }  
+    setProject('')
+           
+  }
+
+  const handleFormCancel = ()=>{ 
+    if(chronoToEdit){     
+      setChronoToEdit(null)   
+      console.log('estoy editando para el boton calcelar')
+      setTitle(el.title)
+      setProject(el.project)
+      
+        console.log(el.title)
+        console.log(el.project)     
+    }
+    setShowForm(false)
+    console.log(title)
+    console.log(project)   
+  }
 
   useEffect(() => { 
     if(chronoToEdit){
@@ -57,10 +78,10 @@ export const Form = ({createProject, updateProject, setShowForm, chronoToEdit, e
                     {chronoToEdit ?                       
                       <button type="submit" className="btn btn-outline-primary">Update</button>                                           
                     :                    
-                      <button type="submit" className="btn btn-outline-primary">Create</button>                      
-                    }
-                    <button onClick={() => setShowForm(false)} type="button" className="btn btn-outline-danger">Cancel</button>                                                                 
-                  </div>                
+                      <button type="submit" className="btn btn-outline-primary">Create</button>
+                    }                   
+                    <button onClick={handleFormCancel} type="button" className="btn btn-outline-danger">Cancel</button>                
+                  </div>                   
                 </form>                            
               </div>
             </div>        

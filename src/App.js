@@ -9,7 +9,7 @@ export const App = () => {
 
   const [chronometers, setChronometers] = useState([...data]);
   const [showForm, setShowForm] = useState(false);
-  const [chronoToEdit, setChronoToEdit] = useState(null);
+  const [chronoToEdit, setChronoToEdit] = useState(null); 
 
   const createProject= (title, project)=>{ 
     const chronometer = {id: idGenerator(), title, project}  
@@ -22,7 +22,7 @@ export const App = () => {
     setChronometers(newChronometers)
   }
 
-  const updateProject = (id, title, project)=> {
+  const updateProject = (id, title, project)=> {  
 
     let newChronometers = chronometers.map(chronometer => {
       if(chronometer.id === id){ 
@@ -30,11 +30,10 @@ export const App = () => {
         chronometer.project = project
       } 
       return chronometer
-    })
-    console.table(newChronometers)
+    })    
     setChronometers(newChronometers)
-    setChronoToEdit(null)  
-    console.log(id)
+    setChronoToEdit(null)
+  
   }
 
   return (
@@ -47,10 +46,11 @@ export const App = () => {
           chronometers={chronometers}
           deleteProject={deleteProject}
           setChronoToEdit={setChronoToEdit}
-          chronoToEdit={chronoToEdit}        
+          chronoToEdit={chronoToEdit}                
           setShowForm={setShowForm}
           createProject={createProject}
-          updateProject={updateProject}/>        
+          updateProject={updateProject}               
+        />        
       </section>      
       <section className="mt-4">
         {showForm ?
@@ -62,7 +62,7 @@ export const App = () => {
             setChronoToEdit={setChronoToEdit}
             /> 
         :
-          <button onClick={() => setShowForm(true)} type="button" className="btn btn-outline-secondary btn-lg fw-bold mt-3"> + </button>  
+          <button onClick={() => setShowForm(true)} type="button" className="btn btn-outline-secondary btn-lg fw-bold mt-3"> + </button>         
         }
         </section>       
     </div>
