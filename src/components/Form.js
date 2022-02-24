@@ -24,31 +24,29 @@ export const Form = ({createProject, updateProject, setShowForm, chronoToEdit,  
       updateProject(el.id, title, project)      
       handleFormCancel()  
       
-      
     }else { 
       if(title, project){
         createProject(title, project) 
-                        
       }
+      handleResetForm()
+      console.log(project)                
     }     
-    setTitle('')
-    setProject('')
-           
   }
 
   const handleFormCancel = ()=>{ 
     if(chronoToEdit){     
-      setChronoToEdit(null)   
-      console.log('estoy editando para el boton calcelar')
+      setChronoToEdit(null)
       setTitle(el.title)
-      setProject(el.project)
-      
-        console.log(el.title)
-        console.log(el.project)     
+      setProject(el.project)      
     }
-    setShowForm(false)
+    setShowForm(false)    
+    handleResetForm()
     console.log(title)
-    console.log(project)   
+  }
+
+  const handleResetForm = ()=>{  
+    setTitle('')
+    setProject('')
   }
 
   useEffect(() => { 
