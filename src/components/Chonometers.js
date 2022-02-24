@@ -30,8 +30,7 @@ export const Chronometers = ({chronometers, createProject, deleteProject, update
               setChronoToEdit={setChronoToEdit}
               setShowForm={setShowForm}
               createProject={createProject}
-              updateProject={updateProject}
-              
+              updateProject={updateProject}      
             />                      
         ))
       } 

@@ -13,9 +13,9 @@ export const Form = ({createProject, updateProject, setShowForm, chronoToEdit,  
     setTitle(valueTitle)
   }
 
-  const handleProyect= (e)=>{
-    const valueProyect = e.target.value
-    setProject(valueProyect)    
+  const handleProject= (e)=>{
+    const valueProject = e.target.value
+    setProject(valueProject)    
   }  
 
   const handleOnSubmit = (e) => {
@@ -28,8 +28,7 @@ export const Form = ({createProject, updateProject, setShowForm, chronoToEdit,  
       if(title, project){
         createProject(title, project) 
       }
-      handleResetForm()
-      console.log(project)                
+      handleResetForm()                     
     }     
   }
 
@@ -40,8 +39,7 @@ export const Form = ({createProject, updateProject, setShowForm, chronoToEdit,  
       setProject(el.project)      
     }
     setShowForm(false)    
-    handleResetForm()
-    console.log(title)
+    handleResetForm()    
   }
 
   const handleResetForm = ()=>{  
@@ -69,8 +67,8 @@ export const Form = ({createProject, updateProject, setShowForm, chronoToEdit,  
                     <input type="text" className="form-control" id="input1" value={title} name="title" onChange={handleTitle}/>                                  
                   </div> 
                   <div className="mb-2">             
-                    <label htmlFor="input2" className="form-label">Proyect</label>
-                    <input type="text" className="form-control" id="input2" value={project} name="project" onChange={handleProyect}/>                                  
+                    <label htmlFor="input2" className="form-label">Project</label>
+                    <input type="text" className="form-control" id="input2" value={project} name="project" onChange={handleProject}/>                                  
                   </div>                 
                   <div className="btn-group mb-1 mt-3 d-flex">
                     {chronoToEdit ?                       
