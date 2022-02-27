@@ -5,8 +5,7 @@ import { formatTime } from '../utils/formatTime';
 export const Chronometer = ({
     
   deleteProject,
-  setChronoToEdit,
-  setShowForm,  
+  setChronoToEdit,    
   el
 
   })=> {

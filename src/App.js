@@ -46,9 +46,7 @@ export const App = () => {
           chronometers={chronometers}
           deleteProject={deleteProject}
           setChronoToEdit={setChronoToEdit}
-          chronoToEdit={chronoToEdit}                
-          setShowForm={setShowForm}
-          createProject={createProject}
+          chronoToEdit={chronoToEdit}              
           updateProject={updateProject}               
         />        
       </section>      
