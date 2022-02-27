@@ -34,9 +34,9 @@ export const Form = ({createProject, updateProject, setShowForm, chronoToEdit,  
 
   const handleFormCancel = ()=>{ 
     if(chronoToEdit){     
-      setChronoToEdit(null)
       setTitle(el.title)
       setProject(el.project)      
+      setChronoToEdit(null)
     }
     setShowForm(false)    
     handleResetForm()    
@@ -51,7 +51,7 @@ export const Form = ({createProject, updateProject, setShowForm, chronoToEdit,  
     if(chronoToEdit){
       setTitle(el.title)
       setProject(el.project)
-    }
+    } 
   }, [chronoToEdit]);
 
   return(

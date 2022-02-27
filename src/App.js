@@ -55,12 +55,9 @@ export const App = () => {
       <section className="mt-4">
         {showForm ?
           <Form
-            createProject={createProject}
-            updateProject={updateProject}
-            setShowForm={setShowForm}           
-            chronoToEdit={chronoToEdit}
-            setChronoToEdit={setChronoToEdit}
-            /> 
+            createProject={createProject}            
+            setShowForm={setShowForm}    
+          /> 
         :
           <button onClick={() => setShowForm(true)} type="button" className="btn btn-outline-secondary btn-lg fw-bold mt-3"> + </button>         
         }
