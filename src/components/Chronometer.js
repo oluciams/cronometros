@@ -2,13 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { formatTime } from '../utils/formatTime';
 
 
-export const Chronometer = ({
-    
-  deleteProject,
-  setChronoToEdit,    
-  el
-
-  })=> {
+export const Chronometer = ({deleteProject, setChronoToEdit, el})=> {
 
   const [timer, setTimer] = useState(0);
   const [timerStart, setTimerStart] = useState(false);

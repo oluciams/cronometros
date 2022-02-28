@@ -4,9 +4,7 @@ import React, { useEffect, useState } from 'react';
 export const Form = ({createProject, updateProject, setShowForm, chronoToEdit,  setChronoToEdit, el})=> {
 
  const [title, setTitle] = useState('');
- const [project, setProject] = useState('');
- 
- 
+ const [project, setProject] = useState(''); 
 
   const handleTitle= (e)=>{
     const valueTitle = e.target.value

@@ -22,8 +22,7 @@ export const App = () => {
     setChronometers(newChronometers)
   }
 
-  const updateProject = (id, title, project)=> {  
-
+  const updateProject = (id, title, project)=> { 
     let newChronometers = chronometers.map(chronometer => {
       if(chronometer.id === id){ 
         chronometer.title = title
