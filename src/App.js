@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import data from './data';
-import { Chronometers } from './components/Chonometers';
+import { Chronometers } from './components/Chronometers';
 import { Form } from './components/Form';
 import idGenerator from './utils/idGenerator';
 
