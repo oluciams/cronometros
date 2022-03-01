@@ -16,8 +16,9 @@ export const Chronometer = ({deleteProject, setChronoToEdit, el})=> {
       interval = setInterval (()=>{
       setTimer(prevTimer => prevTimer + 1)
       }, 1000)
-    } else {
-      clearInterval(interval)
+    } 
+    else {
+      clearInterval(interval)   
     }
 
     return () => clearInterval(interval)
@@ -49,12 +50,12 @@ export const Chronometer = ({deleteProject, setChronoToEdit, el})=> {
               </button>
             </div>
           </div>
-          {!timerStart && (
-            <button onClick={() => setTimerStart(true)} type="button" className="btn btn-outline-success">Start</button>
-          )}
-          {timerStart && (
-            <button onClick={() => setTimerStart(false)} type="button" className="btn btn-outline-danger">Stop</button>
-          )}
+            {!timerStart && (
+              <button onClick={() => setTimerStart(true)} type="button" className="btn btn-outline-success">Start</button>
+            )}
+            {timerStart && (
+              <button onClick={() => setTimerStart(false)} type="button" className="btn btn-outline-danger">Stop</button>
+            )}
           </div>        
         </div>      
       </div>
