@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 
-export const Form = ({createProject, updateProject, setShowForm, chronoToEdit,  setChronoToEdit, el})=> {
+export const Form = ({createProject, setShowForm, el, chronoToEdit, updateProject, setChronoToEdit})=> {
 
  const [title, setTitle] = useState('');
  const [project, setProject] = useState(''); 

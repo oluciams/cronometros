@@ -9,7 +9,7 @@ export const App = () => {
 
   const [chronometers, setChronometers] = useState([...data]);
   const [showForm, setShowForm] = useState(false);
-  const [chronoToEdit, setChronoToEdit] = useState(null); 
+  // const [chronoToEdit, setChronoToEdit] = useState(null); 
 
   const createProject= (title, project)=>{ 
     const chronometer = {id: idGenerator(), title, project}  
@@ -31,8 +31,6 @@ export const App = () => {
       return chronometer
     })    
     setChronometers(newChronometers)
-    setChronoToEdit(null)
-  
   }
 
   return (
@@ -43,9 +41,7 @@ export const App = () => {
       <section>
         <Chronometers
           chronometers={chronometers}
-          deleteProject={deleteProject}
-          setChronoToEdit={setChronoToEdit}
-          chronoToEdit={chronoToEdit}              
+          deleteProject={deleteProject}                  
           updateProject={updateProject}               
         />        
       </section>      
